@@ -33,6 +33,13 @@ class ViewController: MDCCollectionViewController {
                                                             target: self,
                                                             action: #selector(ViewController.barButtonDidTap))
         
+        view.addSubview(fab)
+        fab.translatesAutoresizingMaskIntoConstraints = false
+        fab.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
+        fab.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0).isActive = true
+        fab.setTitle("+", for: .normal)
+        fab.setTitle("-", for: .selected)
+        fab.addTarget(self, action: #selector(ViewController.fabDidTap), for: .touchUpInside)
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
