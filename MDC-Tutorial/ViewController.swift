@@ -8,10 +8,12 @@
 
 import UIKit
 import MaterialComponents.MaterialAppBar
+import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialCollections
 
 class ViewController: MDCCollectionViewController {
     let appBar = MDCAppBar()
+    let fab = MDCFloatingButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,5 +74,9 @@ class ViewController: MDCCollectionViewController {
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(ViewController.barButtonDidTap))
+    }
+
+    func fabDidTap(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
 }
