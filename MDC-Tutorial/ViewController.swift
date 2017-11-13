@@ -39,13 +39,13 @@ class ViewController: MDCCollectionViewController {
         fab.addTarget(self, action: #selector(ViewController.fabDidTap(_:)), for: .touchUpInside)
     }
 
-    func barButtonDidTap(sender: UIBarButtonItem) {
+    func barButtonDidTap(_ sender: UIBarButtonItem) {
         editor.isEditing = !editor.isEditing
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: editor.isEditing ? "Cancel" : "Edit", style: .plain, target: self, action: #selector(ViewController.barButtonDidTap(_:)))
     }
 
-    func fabDidTap(sender: UIButton) {
+    func fabDidTap(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
 
