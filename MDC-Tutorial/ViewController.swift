@@ -29,7 +29,7 @@ class ViewController: MDCCollectionViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit",
                                                             style: .plain,
                                                             target: self,
-                                                            action: #selector(ViewController.barButtonDidTap(_:)))
+                                                            action: #selector(ViewController.barButtonDidTap))
         
     }
 
@@ -71,6 +71,6 @@ class ViewController: MDCCollectionViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: buttonTitle,
                                                             style: .plain,
                                                             target: self,
-                                                            action: #selector(ViewController.barButtonDidTap(_:)))
+                                                            action: #selector(ViewController.barButtonDidTap))
     }
 }
