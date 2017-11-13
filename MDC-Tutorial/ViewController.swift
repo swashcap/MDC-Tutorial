@@ -44,4 +44,16 @@ class ViewController: MDCCollectionViewController {
 
         return cell
     }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == appBar.headerViewController.headerView.trackingScrollView {
+            appBar.headerViewController.headerView.trackingScrollDidScroll()
+        }
+    }
+
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == appBar.headerViewController.headerView.trackingScrollView {
+            appBar.headerViewController.headerView.trackingScrollDidEndDecelerating()
+        }
+    }
 }
