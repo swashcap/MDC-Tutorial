@@ -24,6 +24,13 @@ class ViewController: MDCCollectionViewController {
         appBar.addSubviewsToParent()
 
         title = "Material Components"
+    
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(ViewController.barButtonDidTap(_:)))
+        
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -55,5 +62,15 @@ class ViewController: MDCCollectionViewController {
         if scrollView == appBar.headerViewController.headerView.trackingScrollView {
             appBar.headerViewController.headerView.trackingScrollDidEndDecelerating()
         }
+    }
+
+    func barButtonDidTap(sender: UIBarButtonItem) {
+        editor.isEditing = !editor.isEditing
+        
+        let buttonTitle =  editor.isEditing ? "Cancel" : "Edit"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: buttonTitle,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(ViewController.barButtonDidTap(_:)))
     }
 }
